@@ -164,9 +164,9 @@ function! project#config#welcome() abort
       endfor
     endif
     if get(g:, 'project_use_nerdtree', 0) && isdirectory(file)
-      execute 'nnoremap <silent><buffer> '. cnt .' :enew \| NERDTree '. s:escape(file).inits.lcd."<cr>"
+      execute 'nnoremap <silent><buffer> '. cnt .' :enew \| NERDTree '. s:escape(file).lcd.inits."<cr>"
     else
-      execute 'nnoremap <silent><buffer> '. cnt .' :edit '. s:escape(file).inits.lcd."<cr>"
+      execute 'nnoremap <silent><buffer> '. cnt .' :edit '. s:escape(file).lcd.inits."<cr>"
     endif
     let cnt += 1
     if cnt == 10
