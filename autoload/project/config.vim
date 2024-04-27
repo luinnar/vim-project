@@ -165,6 +165,8 @@ function! project#config#welcome() abort
     endif
     if get(g:, 'project_use_nerdtree', 0) && isdirectory(file)
       execute 'nnoremap <silent><buffer> '. cnt .' :enew \| NERDTree '. s:escape(file).lcd.inits."<cr>"
+    elseif get(g:, 'project_use_neotree', 0) && isdirectory(file)
+      execute 'nnoremap <silent><buffer> '. cnt .' :enew '. lcd . inits .' \| Neotree dir=.<cr>'
     else
       execute 'nnoremap <silent><buffer> '. cnt .' :edit '. s:escape(file).lcd.inits."<cr>"
     endif
